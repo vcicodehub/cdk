@@ -5,8 +5,16 @@ from aws_cdk import (
 )
 from constructs import Construct
 
-class CdkStack(Stack):
+class SRSJobCodesStack(Stack):
 
+    '''
+    STACK
+    - get vpc & subnets
+    - get ecs security groups
+    - create ecs policies
+    - create ecs execution role (using policies & AmazonECSTaskExecutionRolePolicy)  
+    - create ecs task role (using policies & AmazonECSTaskExecutionRolePolicy)
+    '''
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
